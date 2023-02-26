@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h3 class="h3">Top mangas</h3>
+<div class="topAnimes">
+</div>
+<script>
+    let topAnimesDiv = document.querySelector('.topAnimes');
+function loadTopMangas(page){
+  let topMangaUrl = 'https://manga-gamma.vercel.app/api/v1/top?page=';
+  const xhr = new XMLHttpRequest();
+  xhr.onload = function(){
+    let data = JSON.parse(this.responseText);
+    for (var i = 0; i < data.length; i++) {
+      html = `
+        <a href="/manga?mal_id=${data[i]["id"]}"><button class="cardBtn"><div class="animeCard">
+          <div class="cardBody">
+            <img src="${data[i]['image']}">
+            <div class="cardText">
+              <h2 class="cardTitle" style="font-weight: bolder">${data[i]['title']}</h2>
+            </div>
+          </div>
+        </div></button></a>
+          `;
+        topAnimesDiv.innerHTML += html
+    }
+  }
+  xhr.open('GET',topMangaUrl+`${page}`,true)
+  xhr.send()
+}
+loadTopMangas(1)
+</script>
+{% endblock %}

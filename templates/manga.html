@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="Mangainfo" id="mangaInfo">
+
+</div>
+
+<script>
+    MangaInfoUrl = "https://manga-gamma.vercel.app/api/v1/manga/{{id}}";
+    function getInfo(){
+        let Mangainfo = document.querySelector("#mangaInfo");
+        const xhr = new  XMLHttpRequest();
+        xhr.onload = function(){
+            data = JSON.parse(this.responseText);
+            html = `
+            <br><img src="${data["img"]}" width="200" height="260"><br>
+    <span style="color: rgb(30, 255, 0);">${data["status"]}</span>
+    <h1 style="text-align: center;font-weight: bolder;font-size: 1.7rem;">${data["english"]}</h1>
+    <span style="color: rgb(106, 128, 153);">${data["authors"]}</span><br>
+    <a href="#"><button class="readBtn">Read now <i class="bi bi-play-fill"></i></button></a><br>
+    <p class="desc">${data["synopsis"]}</p><br>
+            `;
+            Mangainfo.innerHTML += html;
+        }
+        xhr.open("GET", MangaInfoUrl,true)
+        xhr.send()
+    }
+    getInfo()
+
+</script>
+{% endblock %}

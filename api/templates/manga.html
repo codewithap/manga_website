@@ -14,7 +14,7 @@
             data = JSON.parse(this.responseText);
             let name = data["english"];
             if(name == undefined){
-                name = data["french"]
+                name = "{{name}}"
             }
             html = `
             <br><img src="${data["img"]}" width="200" height="260"><br>

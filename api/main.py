@@ -10,7 +10,8 @@ def home():
 @app.route('/manga')
 def manga():
     id = request.args.get("mal_id")
-    return render_template("manga.html", id = id)
+    name = request.args.get("name")
+    return render_template("manga.html", id = id,name=name)
 
 if __name__ == "__main__":
     app.run(debug=True,host="0.0.0.0",port=8000)

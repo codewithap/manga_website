@@ -13,7 +13,7 @@ function loadTopMangas(page){
     let data = JSON.parse(this.responseText);
     for (var i = 0; i < data.length; i++) {
       html = `
-        <a href="/manga?mal_id=${data[i]["id"]}"><button class="cardBtn"><div class="animeCard">
+        <a href="/manga?mal_id=${data[i]["id"]}&name=${data[i]["title"]}"><button class="cardBtn"><div class="animeCard">
           <div class="cardBody">
             <img src="${data[i]['image']}">
             <div class="cardText">

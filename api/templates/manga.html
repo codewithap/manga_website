@@ -12,7 +12,7 @@
         const xhr = new  XMLHttpRequest();
         xhr.onload = function(){
             data = JSON.parse(this.responseText);
-            let name = data["englis"];
+            let name = data["english"];
             if(name == undefined){
                 name = data["french"]
             }

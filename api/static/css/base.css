@@ -429,11 +429,6 @@ h2{
     align-items: center;
 }
 
-#login_button:hover{
-  transition: 0.3s ease-in-out;
-  color: #D3DCE4;
-  background: #00CCFF;
-}
 
 .fotter {
     margin-top: 30px;

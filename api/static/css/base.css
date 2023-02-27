@@ -215,8 +215,8 @@ header{
   display: flex;
   align-items: center;
   justify-content: center;
-  width: calc(100% - 10px);
-  height: calc(100% - 50px);
+  width: calc(100% - 00px);
+  height: calc(100% - 0px);
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.704);
   flex-direction: column;
@@ -238,6 +238,13 @@ header{
   #fb07d9 90%, 
   #ff0000 100%  )
   repeat 0% 0% / 300% 100%;
+  animation: rgb 5s linear infinite;
+}
+
+@keyframes rgb {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
 }
 
 .Mangainfo .readBtn{

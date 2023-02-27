@@ -209,11 +209,26 @@ header{
     background-color: rgba(0, 0, 0, 0.704);
     border-radius: 10px;
     margin: auto;
-    box-shadow: rgba(85, 91, 255,.5) 0px 0px 8px 2px, 
-                rgba(31, 193, 27,.5) 0px 0px 7px 4px,
-                rgba(255, 217, 19,.5) 0px 0px 6px 6px, 
-                rgba(255, 156, 85,.5) 0px 0px 5px 8px,
-                rgba(255, 85, 85,.5) 0px 0px 4px 12px;
+    
+}
+
+.Mangainfo::after{
+  content:"";
+  background: linear-gradient(45deg,
+  #ff0000 0%, 
+  #ff9a00 10%,
+  #d0de21 20%,
+  #4fdc4a 30%, 
+  #3fdad8 40%,
+  #2fc9e2 50%, 
+  #1c7fee 60%, 
+  #5f15f2 70%, 
+  #ba0cf8 80%, 
+  #fb07d9 90%, 
+  #ff0000 100%  )
+  repeat 0% 0% / 300% 100%;
+  position: absolute;
+  inset: -3px;
 }
 
 .Mangainfo .readBtn{

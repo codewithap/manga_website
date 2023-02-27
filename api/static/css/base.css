@@ -216,9 +216,10 @@ header{
   align-items: center;
   justify-content: center;
   width: calc(100% - 10px);
-  height: calc(100% - 10px);
+  height: calc(100% - 20px);
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.704);
+  flex-direction: column;
 }
 
 

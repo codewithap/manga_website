@@ -6,7 +6,7 @@
 </div>
 
 <script>
-    MangaInfoUrl = "https://manga-gamma.vercel.app/api/v1/manga/{{id}}";
+    MangaInfoUrl = "https://api.consumet.org/manga/mangapill/info";
     function getInfo(){
         let Mangainfo = document.querySelector(".mangainfo2");
         const xhr = new  XMLHttpRequest();
@@ -27,7 +27,7 @@
             Mangainfo.innerHTML += html;
         }
         xhr.open("GET", MangaInfoUrl,true)
-        xhr.send()
+        xhr.send({ params: { id: "{{id}}"} })
     }
     getInfo()
 

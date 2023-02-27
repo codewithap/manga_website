@@ -227,8 +227,6 @@ header{
   #fb07d9 90%, 
   #ff0000 100%  )
   repeat 0% 0% / 300% 100%;
-  position: relative;
-  inset: -3px;
 }
 
 .Mangainfo .readBtn{

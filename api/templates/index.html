@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
-
+<h3 class="h3">Top Mangas</h3>
+<div class="topAnimes"></div>
 
 <script>
     let topAnimesDiv = document.querySelector('.topAnimes');
@@ -20,7 +21,7 @@ function loadTopMangas(page){
           </div>
         </div></button></a>
           `;
-        topAnimesDiv.innerHTML += html
+        topAnimesDiv.innerHTML += html;
     }
   }
   xhr.open('GET',topMangaUrl+`${page}`,true)

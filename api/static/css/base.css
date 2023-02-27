@@ -244,3 +244,12 @@ i{
         width: 70%;
     }
 }
+
+#queryBox{
+  color: #333;
+}
+
+.h3{
+  font-weight: bolder;
+  padding-left: 5px 1rem;
+}

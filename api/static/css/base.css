@@ -109,7 +109,7 @@ header{
   height: calc(100% - 70px);
   transition: 250ms;
   position: absolute;
-  z-index: 10;
+  z-index: 100;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -365,7 +365,7 @@ i{
     border-radius: 50px 5px;
     inset: 5px;
     padding: 50px 40px;
-    
+    z-index: 10;
     color: #00ccff;
 
 } 

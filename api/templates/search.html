@@ -6,15 +6,15 @@
 <script>
   let topAnimesDiv = document.querySelector('.topAnimes');
 function searchManga(query){
-  let searchMangaUrl = 'https://manga-gamma.vercel.app/api/v1/search/';
+  let searchMangaUrl = 'https://api-one-rosy.vercel.app/manga/mangapill/';
   const xhr = new XMLHttpRequest();
   xhr.onload = function(){
-    let data = JSON.parse(this.responseText)['data'];
+    let data = JSON.parse(this.responseText)['results'];
     for (var i = 0; i < data.length; i++) {
       html = `
         <a href="/manga?mal_id=${data[i]["id"]}&name=${data[i]["title"]}"><button class="cardBtn"><div class="animeCard">
           <div class="cardBody">
-            <img src="${data[i]['img']}">
+            <img src="${data[i]['image']}">
             <div class="cardText">
               <h2 class="cardTitle" style="font-weight: bolder">${data[i]['title']}</h2>
             </div>

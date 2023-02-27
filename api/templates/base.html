@@ -37,7 +37,7 @@
     </div>
     <div id="searchBox"><!--  searchBox  -->
       <input type="text" name="sQueryBox" id="queryBox" placeholder="Search mangas...">
-      <a id="searchBtn" name="searchBtn" style="color: #000">Search</a>
+      <a href="" style="display: flex;align-items: center;" id="searchBtn" name="searchBtn" style="color: #000">Search</a>
     </div>
     </nav>
     <main id="body">
@@ -50,6 +50,11 @@
 
   </footer>
   <script>
+  let input = document.querySelector('#queryBox')
+  input.addEventListener('input',()=>{
+    document.querySelector('searchBtn').href = input.value;
+  });
+  
     let search = document.querySelector('#search');
 let searchOpened = false;
 let searchBox = document.querySelector('#searchBox');

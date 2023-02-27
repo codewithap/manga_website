@@ -308,3 +308,9 @@ i{
 #searchBtn{
   color: #333;
 }
+
+
+.desc{
+  background-clip: text;
+  -webkit-background-clip: text;
+}

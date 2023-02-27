@@ -14,7 +14,7 @@ function searchManga(query){
       html = `
         <a href="/manga?mal_id=${data[i]["id"]}&name=${data[i]["title"]}"><button class="cardBtn"><div class="animeCard">
           <div class="cardBody">
-            <img src="${data[i]['img'][1]}">
+            <img src="${data[i]['img']}">
             <div class="cardText">
               <h2 class="cardTitle" style="font-weight: bolder">${data[i]['title']}</h2>
             </div>

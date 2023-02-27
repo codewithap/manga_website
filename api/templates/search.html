@@ -12,7 +12,7 @@ function searchManga(query){
     let data = JSON.parse(this.responseText)['data'];
     for (var i = 0; i < data.length; i++) {
       html = `
-        <a href="/manga?mal_id=${data[i]["mal_id"]}&name=${data[i]["title"]}"><button class="cardBtn"><div class="animeCard">
+        <a href="/manga?mal_id=${data[i]["id"]}&name=${data[i]["title"]}"><button class="cardBtn"><div class="animeCard">
           <div class="cardBody">
             <img src="${data[i]['img'][1]}">
             <div class="cardText">

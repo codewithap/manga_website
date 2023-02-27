@@ -18,7 +18,7 @@ def search(query):
   
   return render_template("search.html", q = query)
 
-@app.round("/manga/chapters")
+@app.route("/manga/chapters")
 def chapters():
   id = request.args.get("name")
   return render_template("chapters.html", name = name)

@@ -52,7 +52,7 @@
   <script>
   let input = document.querySelector('#queryBox')
   input.addEventListener('input',()=>{
-    document.querySelector('searchBtn').href = input.value;
+    document.querySelector('#searchBtn').href = '/search/'+input.value;
   });
   
     let search = document.querySelector('#search');

@@ -327,8 +327,7 @@ i{
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    margin-top: 70px;
-    margin: auto;
+    margin: 50px auto;
 }
 .login_form_container::before{
     

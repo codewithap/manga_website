@@ -2,13 +2,13 @@
 {% block content %}
 <br>
 <div class="Mangainfo" id="mangaInfo">
-
+  <div class="mangainfo2"></div>
 </div>
 
 <script>
     MangaInfoUrl = "https://manga-gamma.vercel.app/api/v1/manga/{{id}}";
     function getInfo(){
-        let Mangainfo = document.querySelector("#mangaInfo");
+        let Mangainfo = document.querySelector(".mangainfo2");
         const xhr = new  XMLHttpRequest();
         xhr.onload = function(){
             data = JSON.parse(this.responseText);

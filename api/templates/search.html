@@ -6,7 +6,7 @@
 
 <script>
   let topAnimesDiv = document.querySelector('.topAnimes');
-function search(query){
+function searchManga(query){
   let searchMangaUrl = 'https://manga-gamma.vercel.app/api/v1/search/';
   const xhr = new XMLHttpRequest();
   xhr.onload = function(){
@@ -29,6 +29,6 @@ function search(query){
   xhr.send()
 }
 
-search('{{q}}')
+searchManga('{{q}}')
 </script>
 {%  endblock  %}

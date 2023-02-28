@@ -6,7 +6,7 @@
 <script>
   let topAnimesDiv = document.querySelector('.topAnimes');
 function searchManga(query){
-  let searchMangaUrl = 'https://api-one-rosy.vercel.app/manga/mangahere/';
+  let searchMangaUrl = 'https://api-one-rosy.vercel.app/manga/mangadex/';
   const xhr = new XMLHttpRequest();
   xhr.onload = function(){
     let data = JSON.parse(this.responseText)['results'];

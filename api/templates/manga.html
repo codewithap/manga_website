@@ -2,34 +2,56 @@
 {% block content %}
 <br>
 <div class="Mangainfo" id="mangaInfo">
-  <div class="mangainfo2"></div>
+  <div class="mangainfo2">
+    <br><img src="{{img}}" width="200" height="260"><br>
+    <span style="color: rgb(30, 255, 0);"></span>
+    <h1 style="text-align: center;font-weight: bolder;font-size: 1.7rem;">{{name}}</h1>
+    <span style="color: rgb(106, 128, 153);text-align:center;padding:0 20px;"></span><br>
+    <h2 class="h2">Chapters</h2>
+    <div class="chapters">
+      {%  for item in data["data"] %}
+      <a href="/chapter?link={{item["link"]}}" class="chapter">{{item["title"]}}</a>
+      {%  endfor  %}
+    </div>
+    
+    <br>
+  </div>
 </div>
-
+<style>
+  
+  .h2{
+    width: 95%;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    background: #000;
+    font-size: 1.5rem;
+  }
+  
+  .chapters{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    height: 800px;
+    background: #000;
+    overflow-y: auto;
+    width: 95%;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+  
+  .chapters a{
+    background: #333;
+    border-radius: 1rem;
+    padding: 10px;
+    margin: 5px 0;
+  }
+</style>
 <script>
-    MangaInfoUrl = "https://api.consumet.org/manga/mangapill/info";
-    function getInfo(){
-        let Mangainfo = document.querySelector(".mangainfo2");
-        const xhr = new  XMLHttpRequest();
-        xhr.onload = function(){
-            data = JSON.parse(this.responseText);
-            let name = data["english"];
-            if(name == undefined){
-                name = "{{name}}"
-            }
-            html = `
-            <br><img src="${data["image"]}" width="200" height="260"><br>
-    <span style="color: rgb(30, 255, 0);">${data["status"]}</span>
-    <h1 style="text-align: center;font-weight: bolder;font-size: 1.7rem;">${name}</h1>
-    <span style="color: rgb(106, 128, 153);text-align:center;padding:0 20px;"></span>
-    <a href="#"><button class="readBtn">Read now <i class="bi bi-play-fill"></i></button></a><br>
-    <p class="desc"></p><br>
-            `;
-            Mangainfo.innerHTML += html;
-        }
-        xhr.open("GET", MangaInfoUrl,true)
-        xhr.send({ params: { id: "{{id}}"} })
-    }
-    getInfo()
-
+    
 </script>
 {% endblock %}

@@ -1,33 +1,20 @@
 {%  extends 'base.html' %}
 {%  block content %}
 <div class="topAnimes">
-</div>
-
-<script>
-  let topAnimesDiv = document.querySelector('.topAnimes');
-function searchManga(query){
-  let searchMangaUrl = 'https://api-one-rosy.vercel.app/manga/mangasee123/';
-  const xhr = new XMLHttpRequest();
-  xhr.onload = function(){
-    let data = JSON.parse(this.responseText)['results'];
-    for (var i = 0; i < data.length; i++) {
-      html = `
-        <a href="/manga?mal_id=${data[i]["id"]}&name=${data[i]["title"]}"><button class="cardBtn"><div class="animeCard">
+	{{q["err"]}}
+  {%  for manga in q["data"]  %}
+    <a href="/manga?id={{manga['id']}}&name={{manga['title']}}&img={{manga['img']}}"><button class="cardBtn"><div class="animeCard">
           <div class="cardBody">
-            <img src="${data[i]['image']}">
+            <img src="{{manga['img']}}" alt="file not found">
             <div class="cardText">
-              <h2 class="cardTitle" style="font-weight: bolder">${data[i]['title']}</h2>
+              <h2 class="cardTitle" style="font-weight: bolder">{{manga['title']}}</h2>
             </div>
           </div>
         </div></button></a>
-          `;
-        topAnimesDiv.innerHTML += html
-    }
-  }
-  xhr.open('GET',searchMangaUrl+`${query}`,true)
-  xhr.send()
-}
+  {%  endfor  %}
+</div>
 
-searchManga('{{q}}')
+<script>
+
 </script>
 {%  endblock  %}
